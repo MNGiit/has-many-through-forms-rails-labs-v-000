@@ -19,7 +19,9 @@
     <!-- User Comment -->
     
     <!-- User Select existing user -->
+    <%= comment_attributes.collection_select :user_id, User.all, :id, :username %>
     
+    <!-- Create New User -->
     <%= comment_attributes.label "New User" %>
     <%= comment_attributes.fields_for :user, @post.users.build do |comment_user_attributes| %>
       <!-- User Username -->
@@ -29,6 +31,7 @@
       <%= comment_user_attributes.label "Email:" %>
       <%= comment_user_attributes.text_field %>
     <% end %>
+    
     <%= comment_attributes.submit %>
   <% end %>|
 <% end %>
