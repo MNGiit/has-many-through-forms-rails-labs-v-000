@@ -5,5 +5,5 @@
 <% end %>
 <% @post.comments.each do |comment| %>
  <%= comment.content %>
- <%= link_to comment.user.name, user_path(comment.user) %>
+ <%= link_to comment.user.username, user_path(comment.user) %>
 <% end %>
