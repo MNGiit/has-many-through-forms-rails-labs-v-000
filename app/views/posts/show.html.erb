@@ -18,11 +18,10 @@
     <%= f.text_area :content %>
     
     <!-- User Comment -->
-    
     <!-- User Select existing user -->
     <%= f.collection_select :user_id, User.all, :id, :username %>
     
-    
+    <!-- Create a New User -->
     <%= f.fields_for :user, @post.users.build do |user_attributes| %>
       <!-- User Username -->
       <%= user_attributes.label "Username:" %>
@@ -32,7 +31,6 @@
       <%= user_attributes.text_field :email %>
     <% end %>
 
-    
     <%= f.submit %>
   
 <% end %>
