@@ -3,3 +3,5 @@
 <% @post.categories.each do |category| %>
   <%= category.name %>
 <% end %>
+<% @post.comments.each do |comment| %>
+ <%= comment.user
