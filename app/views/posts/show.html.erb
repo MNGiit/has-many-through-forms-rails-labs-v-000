@@ -13,8 +13,8 @@
   <%= f.text_area :content %>
   <%= f.collection_select :user_id, User.all, :id, :username, include_blank: "Choose a User" %>
   <p>Create New User:</p>
-  <input type="text" name="post[categories_attributes][0][name]" id="post_categories_attributes_0_name">
   <%= f.fields_for :user, @post.comments.last.build_user do |user_fields|%>
+    <input type="text" name="post[categories_attributes][0][name]" id="comment_user_attributes_username">
     <%= user_fields.text_field :username %>
     <%= user_fields.text_field :email %>
   <% end %>
