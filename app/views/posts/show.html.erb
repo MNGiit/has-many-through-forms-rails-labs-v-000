@@ -35,18 +35,13 @@
     
     <!-- User Comment -->
     <%= comment_attributes.label "New User" %>
-    <%= comment_attributes.fields_for :user, :comments.build %>
-    
+    <%= comment_attributes.fields_for :user, @post.user.build do |comment_user_attributes| %>
+      <!-- User Username -->
+      <%= comment_user_attributes.label "Username:" %>
+      <%= comment_user_attributes.text_field :username %>
+      <!-- User Email -->
+      <%= comment_user_attributes.label "Email:" %>
+      <%= comment_user_attributes.text_field %>
+    <% end %>
+    <%= comment_attributes.submit %>
   <% end %>|
-  
-  
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
-  <%= f.label "Content" %>
-  <%= f.text_area :content %>
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  <%= f.fields_for :categories, post.categories.build do |categories_fields| %>
-    <%= categories_fields.text_field :name %>
-  <% end %>
-  <%= f.submit %>
-<% end %>
