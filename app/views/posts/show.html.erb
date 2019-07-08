@@ -14,7 +14,6 @@
   <%= f.collection_select :user_id, User.all, :id, :username, include_blank: "Choose a User" %>
   <p>Create New User:</p>
   <%= f.fields_for :users, @post.comments.build do |users_fields| %>
-  <%= f.fields_for :user, @post.comments.last.build_user do |user_fields|%>
     <%= users_fields.text_field :username %>
     <%= users_fields.text_field :email %>
   <% end %>
