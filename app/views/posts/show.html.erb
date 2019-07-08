@@ -8,4 +8,4 @@
  <%= comment.content %>
 <% end %>
 
-<%= form_for 
+<<%= f.fields_for :user, @post.comments.last.build_user do |user_fields|%>
