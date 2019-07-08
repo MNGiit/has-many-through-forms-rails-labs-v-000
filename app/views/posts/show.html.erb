@@ -23,7 +23,7 @@
     <%= f.collection_select :user_id, User.all, :id, :username %>
     
     
-    <%= f.fields_for :user, f.user.build do |user_attributes| %>
+    <%= f.fields_for :user, @post.users.build do |user_attributes| %>
       <!-- User Username -->
       <%= user_attributes.label "Username:" %>
       <%= user_attributes.text_field :username %>
