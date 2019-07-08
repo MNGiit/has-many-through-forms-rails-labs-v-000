@@ -12,7 +12,7 @@
 <%= form_for @post.comments.build do |f| %>
   
     <!-- maybe place hidden_field :post_id -->
-    <%= f.hidden_field :post_id %>
+    
     <!-- Comment Content -->
     <%= f.label "Content:" %>
     <%= f.text_area :content %>
