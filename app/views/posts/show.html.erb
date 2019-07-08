@@ -3,7 +3,7 @@
 <% @post.categories.each do |category| %>
   <%= category.name %>
 <% end %>
-<% @post.comments.each do |comment| %>
+<% @post.unique_comments.each do |comment| %>
  <%= link_to comment.user.username, user_path(comment) %>
  <%= comment.content %>
 <% end %>
