@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def unique_comments
+    self.comments.uniq { |c| c.username }
+  end
+
 end
