@@ -22,6 +22,15 @@
     <!-- User Select existing user -->
     <%= f.collection_select :user_id, User.all, :id, :username %>
     
+    
+    <%= f.fields_for :user, @post.users.build do |comment_user_attributes| %>
+      <!-- User Username -->
+      <%= comment_user_attributes.label "Username:" %>
+      <%= comment_user_attributes.text_field :username %>
+      <!-- User Email -->
+      <%= comment_user_attributes.label "Email:" %>
+      <%= comment_user_attributes.text_field %>
+    <% end %>
 
     
     <%= f.submit %>
