@@ -8,21 +8,22 @@
  <%= comment.content %>
 <% end %>
 
-<%= form_for @post do |f| %>
-  <%= f.fields_for :comments, @post.comments.build do |comment_attributes| %>
+
+<%= form_for @post.comments.build do |f| %>
+  
     <!-- maybe place hidden_field :post_id -->
-    <%= comment_attributes.hidden_field :post_id %>
+    <%= f.hidden_field :post_id %>
     <!-- Comment Content -->
-    <%= comment_attributes.label "Content:" %>
-    <%= comment_attributes.text_area :content %>
+    <%= f.label "Content:" %>
+    <%= f.text_area :content %>
     
     <!-- User Comment -->
     
     <!-- User Select existing user -->
-    <%= comment_attributes.collection_select :user_id, User.all, :id, :username %>
+    <%= f.collection_select :user_id, User.all, :id, :username %>
     
 
     
-    <%= comment_attributes.submit %>
-  <% end %>|
+    <%= f.submit %>
+  
 <% end %>
