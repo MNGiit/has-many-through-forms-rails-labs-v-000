@@ -32,7 +32,7 @@
     
     <!-- User Comment -->
     <%= comment_attributes.label "New User" %>
-    <%= comment_attributes.fields_for :user, @post.user.build do |comment_user_attributes| %>
+    <%= comment_attributes.fields_for :user, @post.users.build do |comment_user_attributes| %>
       <!-- User Username -->
       <%= comment_user_attributes.label "Username:" %>
       <%= comment_user_attributes.text_field :username %>
