@@ -4,6 +4,6 @@
   <%= category.name %>
 <% end %>
 <% @post.unique_comments.each do |comment| %>
- <%= comment.content %>
  <%= link_to comment.user.username, user_path(comment.user) %>
+ <%= comment.content %>
 <% end %>
