@@ -1,3 +1,5 @@
 <%= @post.title %>
 <%= @post.content %>
-<%= @post.category_ids %>
+<% @post.category_ids.eac do |category| %>
+  <%= category.name %>
+<% end %>
