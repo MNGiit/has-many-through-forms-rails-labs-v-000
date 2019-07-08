@@ -25,10 +25,7 @@
 <%= form_for @post do |f| %>
   <%= f.fields_for :comments, @post.comments.build do |comment_attributes| %>
     <!-- maybe place hidden_field :post_id -->
-    <!-- Comment Title -->
-    <%= comment_attributes.label "Title:" %>
-    <%= comment_attributes.text_field :title %>
-    
+
     <!-- Comment Content -->
     <%= comment_attributes.label "Content:" %>
     <%= comment_attributes.text_area :content %>
