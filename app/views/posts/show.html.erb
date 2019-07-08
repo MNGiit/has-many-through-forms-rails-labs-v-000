@@ -4,7 +4,7 @@
   <%= category.name %>
 <% end %>
 <% @post.unique_comments.each do |comment| %>
- <%= link_to comment.user.username, user_path(comment) %>
+ <%= link_to "#{comment.user.username} says ", user_path(comment) %>
  <%= comment.content %>
 <% end %>
 
